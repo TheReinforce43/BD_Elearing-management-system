@@ -8,6 +8,9 @@ from django.utils.translation import gettext_lazy as _
 
 class User(AbstractBaseUser):
     email = models.EmailField(_('Email address'),unique=True)
+    phone_number = models.CharField(_('Phone number'),max_length=20,null=True)
+    full_name = models.CharField(_('Full name'),max_length=100,null=True)
+    
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
 
